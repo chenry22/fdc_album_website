@@ -13,18 +13,27 @@
 <body>
     <div id="flashlight"></div>
     <div id="current-room">Lobby</div>
+    <div id="text-box" class="hidden" onclick="skipTypewriter()">
+        <div id="text-box-content"></div>
+        <div id="options">
+            <div id="option1"></div>
+            <div id="option2"></div>
+        </div>
+        <div id="exit-text-box" class="interactable" onclick="exitTextBox()">x</div>
+    </div>
 
     <div class="lobby">
         <img class="background" src="../images/lobby.webp"/>
-        <div class="lobby-dummy interactable"></div>
+        <div class="lobby-dummy interactable" onclick="startTypewriter('lobby-dummy')"></div>
     </div>
 
     <div class="movement">
-        <div class="down"><a href='../index.html'>↓</a></div>
+        <div class="down"><a href='main-exterior.html'>↓</a></div>
         <div class="left"><a href='left-hallway.html'>←</a></div>
         <div class="right">→</div>
     </div>
 
-    <script src="../flashlight.js"></script>
+    <script src="../scripts/flashlight.js"></script>
+    <script src="../scripts/text-box.js"></script>
 </body>
 </html>

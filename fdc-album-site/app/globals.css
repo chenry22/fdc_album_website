@@ -1,0 +1,224 @@
+html {
+    font-family: 'Nova Round';
+}
+a {
+    all: unset;
+}
+
+.main {
+    height: 90dvh;
+    width: 90dvw;
+    overflow: hidden;
+}
+
+.background {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+}
+.background img {
+    width: 100dvw;
+    height: 100dvh;
+    object-fit: fill;
+}
+
+.gate {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+}
+.about {
+    font-size: 1rem;
+    padding: 10px 14px;
+    border-radius: 100%;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.enter {
+    font-size: 2rem;
+    position: fixed;
+    padding: 10px;
+    bottom: 10dvh;
+    right: 10dvw;
+}
+
+.button {
+    background-color: darkblue;
+    color: yellow;
+    filter: blur(1px);
+}
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    filter: blur(0px);
+}
+
+.interactable:hover {
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px #ffffff67);
+}
+
+.lobby-dummy {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 10%;
+    height: 18%;
+    background-color: yellow;
+    border-radius: 80%;
+}
+
+@keyframes text-glow {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0); }
+    100% { text-shadow: 0 0 10px rgba(255, 255, 224, 0.8); }
+}
+
+.movement {
+    width: 100%;
+    height: 100%;
+}
+.movement div {
+    position: fixed;
+    font-size: 5rem;
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+.movement div:hover {
+    cursor: pointer;
+    color: rgb(255, 253, 244);
+    animation: text-glow infinite alternate 1s ease-in-out;
+}
+.left {
+    left: 3%;
+    bottom: 45%;
+}
+.right {
+    right: 3%;
+    bottom: 45%;
+}
+.down {
+    bottom: 3%;
+    left: 45%;
+}
+.up {
+    bottom: 13%;
+    left: 45%;
+}
+
+@keyframes color-shift {
+    0% { transform: rotate3d(0, 0, 0, 0deg); }
+    50% { transform: rotate3d(1, 1, 0.1, 15deg); }
+    100% { transform: rotate3d(1, -1, 0.1, 15deg); }
+}
+
+#current-room {
+    z-index: 20;
+    position: fixed;
+    padding: 10px 14px;
+    font-size: 1.5rem;
+    top: 20px;
+    left: 20px;
+    border: 2px inset black;
+    background-color: white;
+    font-family: 'Coral Pixels';
+    animation: color-shift 6s alternate infinite ease-in-out;
+}
+#current-room:hover {
+    font-style: italic;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+}
+
+#flashlight {
+    --Xpos: 50vw;
+    --Ypos: 50vh;
+}
+#flashlight:before {
+    z-index: 10;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        circle 20rem at var(--Xpos) var(--Ypos),
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0.85) 
+    );
+}
+.main-door {
+    position: fixed;
+    z-index: 20;
+    top: 50%;
+    left: 36%;
+    background-color: rgba(255, 255, 255, 0.05);
+    filter: blur(4px);
+    width: 28vw;
+    height: 18vw;
+    border: 2px solid rgb(195, 207, 61);
+}
+.main-door:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: blur(4px);
+}
+
+#text-box {
+    z-index: 30;
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    width: 52%;
+    height: 18dvh;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 4%;
+    border: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+#text-box:hover {
+    background-color: rgba(255, 255, 255, 0.96);
+}
+#text-box-content {
+    height: auto;
+}
+#options {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+#options div {
+    padding: 4px 10px;
+    font-family: 'Coral Pixels';
+    color: rgb(17, 17, 97);
+}
+#options div:hover {
+    background-color: rgba(255, 255, 107, 0.5);
+    font-style: italic;
+    cursor: pointer;
+}
+.hidden {
+    display: none !important;
+}
+#exit-text-box {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    background-color: blue;
+    color: yellow;
+    padding: 4px 10px;
+    border-radius: 100%;
+    font-size: 1.2rem;
+}
