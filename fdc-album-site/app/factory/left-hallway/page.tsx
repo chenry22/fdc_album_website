@@ -1,4 +1,5 @@
 'use client';
+import Flashlight from "@/components/flashlight";
 import RoomLabel from "@/components/roomLabel"
 import TextBox from "@/components/textBox"
 import Link from "next/link";
@@ -9,18 +10,17 @@ export default function Home() {
 
     return (
         <div className="main">
-            <RoomLabel roomLabel="Main exterior"/>
+            <RoomLabel roomLabel="Hallway (L)"/>
+            <Flashlight></Flashlight>
             <TextBox activeWriter={active} resetWriter={() => setActive(null)} />
 
             <div className="entrance">
-                <img className="background" src="/outisde-entrance.jpg" onClick={() => setActive(null)}/>
-                <div className="main-door interactable" onClick={() => setActive('main-door')}></div>
+                <img className="background" src="/hallway.jpg" onClick={() => setActive(null)}/>
             </div>
 
             <div className="movement">
-                <div className="down"><Link href='/'>↓</Link></div>
-                <div className="left"><Link href='/factory/outside-left'>←</Link></div>
-                <div className="right">→</div>
+                <div className="up"><Link href=''>↑</Link></div>
+                <div className="right"><Link href='lobby'>→</Link></div>
             </div>
         </div>
   );
