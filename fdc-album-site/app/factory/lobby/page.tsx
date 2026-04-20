@@ -12,7 +12,7 @@ export default function Home() {
         <div className="main">
             <RoomLabel roomLabel="Lobby"/>
             <Flashlight></Flashlight>
-            <TextBox activeWriter={active} resetWriter={() => setActive(null)} />
+            <TextBox activeWriter={active} resetWriter={() => setActive(null)} changeWriter={(to: string) => setActive(to)}/>
 
             <div className="entrance">
                 <img className="background" src="/lobby.webp" onClick={() => setActive(null)}/>

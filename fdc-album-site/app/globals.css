@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Nova+Round&display=swap');
+
 html {
     font-family: 'Nova Round';
 }
@@ -177,7 +179,7 @@ a {
     bottom: 10%;
     left: 20%;
     width: 52%;
-    height: 18dvh;
+    height: 20dvh;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 20px 4%;
     border: 2px solid black;
@@ -223,3 +225,178 @@ a {
     font-size: 1.2rem;
 }
 
+.dummy-creation-kiosk {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 10%;
+    left: 30%;
+}
+
+.dummy-creator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(3, 3, 61);
+    background: linear-gradient(
+        45deg,
+        yellow,
+        yellow 10%,
+        rgb(3, 3, 61) 0,
+        rgb(3, 3, 61) 90%,
+        rgb(3, 3, 61) 0,
+        yellow 10%,
+        yellow
+    );
+
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Nova Round';
+}
+.dummy-create-button {
+    z-index: 1;
+    position: relative;
+    background-color: yellow;
+    border: 1px solid black;
+    color: rgb(21, 21, 118);
+    font-weight: bold;
+    width: fit-content;
+    font-size: 1.6rem;
+    margin-top: 20px;
+    padding: 14px 20px;
+}
+
+@keyframes swirl {
+    from { filter: hue-rotate(0); }
+    to { filter: hue-rotate(-100deg);}
+}
+.dummy-create-button::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: -150%;
+    left: -65%;
+    background: radial-gradient(yellow, transparent, transparent);
+    opacity: 0.6;
+    width: 230%;
+    height: 400%;
+    pointer-events: none;
+    animation: swirl 4s alternate infinite ease-in-out;
+}
+
+.dummy-create-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px yellow;
+}
+.dummy-creator h1 {
+    font-family: inherit;
+    color: yellow;
+    margin: 0 20%;
+    margin-top: 10px;
+    font-size: 2.4rem;
+    text-shadow: 0 0 4px black;
+}
+.dummy-creator p {
+    margin: 0 20%;
+}
+.back-button {
+    position: fixed;
+    font-size: 1.4rem;
+    top: 4%;
+    left: 4%;
+}
+.back-button:hover {
+    cursor: pointer;
+    text-shadow: 0 0 4px yellow;
+}
+
+.completion-button {
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    font-size: 1.2rem;
+    color: yellow;
+    background-color: rgb(9, 17, 68);
+    border: 1px solid yellow;
+    padding: 10px 14px;
+}
+.completion-button:hover {
+    box-shadow: 0 0 10px white;
+    cursor: pointer;
+}
+
+.dummy-controls {
+    display: flex;
+    gap: 20px;
+    padding: 14px;
+    margin: 0 20%;
+    margin-bottom: 10px;
+    background-color: rgb(183, 183, 183);
+}
+
+#dummy-creator-canvas {
+    background-color: white;
+}
+
+.confirm-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 11, 55, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-text {
+    position: relative;
+    width: 60%;
+    font-size: 1.2rem;
+    background-color: white;
+    color: rgb(5, 5, 67);
+    padding: 36px 48px;
+    border: 1px solid black;   
+}
+.confirm-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.confirm-options div {
+    font-weight: bold;
+    padding: 12px 16px;
+}
+.confirm-options div:hover {
+    cursor: pointer;
+}
+.confirm-option {
+    color: black;
+    background-color: yellow;
+    border: 1px solid black;
+}
+.cancel-option {
+    background-color: rgb(9, 9, 66);
+    color: yellow;
+    border: 1px solid yellow;
+}
+.cancel-option-x {
+    position: absolute;
+    top: -18px;
+    left: -14px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: yellow;
+    padding: 4px 8px;
+}
+.cancel-option-x:hover {
+    cursor: pointer;
+    background-color: rgb(255, 255, 105);
+}

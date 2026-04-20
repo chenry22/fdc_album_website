@@ -15,12 +15,12 @@ export default function Home() {
             <TextBox activeWriter={active} resetWriter={() => setActive(null)} changeWriter={(to: string) => setActive(to)} />
 
             <div className="entrance">
-                <img className="background" src="/hallway.jpg" onClick={() => setActive(null)}/>
+                <img className="background" src="/hallway-door.avif"/>
+                <div className="main-door interactable" onClick={() => setActive('hallway-door')}></div>
             </div>
 
             <div className="movement">
-                <div className="up"><Link href='left-hallway-end'>↑</Link></div>
-                <div className="right"><Link href='lobby'>→</Link></div>
+                <div className="down"><Link href='left-hallway'>↓</Link></div>
             </div>
         </div>
   );

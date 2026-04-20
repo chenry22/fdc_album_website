@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <div className="main">
             <RoomLabel roomLabel="Main exterior"/>
-            <TextBox activeWriter={active} resetWriter={() => setActive(null)} />
+            <TextBox activeWriter={active} resetWriter={() => setActive(null)} changeWriter={() => {}}/>
 
             <div className="entrance">
                 <img className="background" src="/outisde-entrance.jpg" onClick={() => setActive(null)}/>
