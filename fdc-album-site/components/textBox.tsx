@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 export default function TextBox(props : { activeWriter: string | null, resetWriter: any, changeWriter: any }) {
     const router = useRouter();
     const contentIndex = new Map([
+        ['gate-dummy', '"Hello visitor! You are in the presence of a glorious Factory, home to engineering feats never seen before! Unfortunately, humans are not allowed inside."'],
+        ['gate-dummy-question', '"More workers like me! It\'s quite a sight, they\'re relentlessly efficent. So much better than humans."'],
+        ['gate-dummy-question-2', '"Incredibly alluring. I actually couldn\'t even stop you from going inside if you wanted to. It\'s not part of my programming."'],
         ['main-door', "It's the entrance to the factory. It doesn't look like it's locked..."],
         ['lobby-dummy', "There's a crash dummy at the front desk."],
         ['lobby-dummy-talk', '"Oh, hello! I didn\'t know people were still allowed in here... Can I do something for you?"'],
@@ -14,15 +17,24 @@ export default function TextBox(props : { activeWriter: string | null, resetWrit
     ]);
 
     const optionsIndex = new Map([
+        ['gate-dummy', [
+            { text: "Who does the work if there aren't any humans?", action: () => props.changeWriter('gate-dummy-question') },
+            { text: '(Walk past the gate)', action: () => router.push('/factory') }
+        ]],
+        ['gate-dummy-question', [
+            { text: "Sounds pretty alluring...", action: () => props.changeWriter('gate-dummy-question-2') },
+            { text: '(Walk past the gate)', action: () => router.push('/factory') }
+        ]],
+        ['gate-dummy-question-2', [
+            { text: "(Respect the dummy's authority)", action: () => exitTextBox() },
+            { text: '(Walk past the gate)', action: () => router.push('/factory') }
+        ]],
         ['main-door', [
             { text: "Enter the factory", action: () => router.push('/factory/lobby') },
             { text: 'Keep looking around', action: () => exitTextBox() }
         ]],
         ['lobby-dummy', [
-            { text: "Talk to it", action: () => {
-                console.log('hi');
-                props.changeWriter('lobby-dummy-talk');
-            }},
+            { text: "Talk to it", action: () => props.changeWriter('lobby-dummy-talk') },
             { text: 'Ignore it', action: () => exitTextBox() }
         ]],
         ['lobby-dummy-talk', [

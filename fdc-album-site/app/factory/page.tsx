@@ -19,8 +19,8 @@ export default function Home() {
 
             <div className="movement">
                 <div className="down"><Link href='/'>↓</Link></div>
-                <div className="left"><Link href='/factory/outside-left'>←</Link></div>
-                <div className="right">→</div>
+                {/* <div className="left"><Link href='/factory/outside-left'>←</Link></div> */}
+                {/* <div className="right">→</div> */}
             </div>
         </div>
   );

@@ -22,7 +22,7 @@ export default function Home() {
             <div className="movement">
                 <div className="down"><Link href='/factory'>↓</Link></div>
                 <div className="left"><Link href='left-hallway'>←</Link></div>
-                <div className="right">→</div>
+                <div className="right"><Link href='right-hallway'>→</Link></div>
             </div>
         </div>
   );
