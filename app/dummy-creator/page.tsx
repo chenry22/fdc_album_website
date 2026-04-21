@@ -95,6 +95,12 @@ export default function Home() {
         setConfirmAction(() => {});
     }
 
+    function submitDummy() {
+        // convert to data url
+        // send to backend
+        // go back to main room (creation should show up on load (prob local storage))
+    }
+
     return (
         <div className="dummy-creator">
             <div className="back-button" onClick={() => {
@@ -120,7 +126,7 @@ export default function Home() {
                         type="range" min={1} step={1} max={30}/>
                 </div>
 
-                <div className="completion-button">* FINISH *</div>
+                <div className="completion-button" onClick={submitDummy}>* FINISH *</div>
                 </>
             }
                 
